@@ -1,0 +1,3 @@
+graft VoiceRecon
+global-exclude *.py[cod] __pycache__ *.so *.ipynb
+recursive-exclude  VoiceRecon/jupy *
