@@ -8,3 +8,8 @@ streamlit
 librosa
 Pipeline
 numpy
+coverage
+flake8
+black
+yapf
+twine
