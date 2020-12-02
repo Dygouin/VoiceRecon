@@ -6,6 +6,5 @@ pytest
 python-gitlab
 streamlit
 librosa
-tensorflow.keras.models
 Pipeline
 numpy
