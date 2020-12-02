@@ -9,7 +9,7 @@ librosa
 Pipeline
 numpy
 coverage
-soundfile
+sndfile
 flake8
 black
 yapf
