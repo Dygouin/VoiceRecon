@@ -8,6 +8,7 @@ streamlit
 librosa
 Pipeline
 numpy
+tensorflow-cpu
 coverage
 flake8
 black
