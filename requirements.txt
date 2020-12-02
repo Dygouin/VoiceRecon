@@ -12,4 +12,5 @@ coverage
 flake8
 black
 yapf
+libsndfile1
 twine
