@@ -26,7 +26,7 @@ clean:
 	@rm -fr VoiceRecon.egg-info
 
 run_streamlit:
-    streamlit run app.py
+	streamlit run app.py
 
 install:
 	@pip install . -U
