@@ -9,3 +9,8 @@ black
 yapf
 python-gitlab
 twine
+streamlit
+librosa
+tensorflow
+Pipeline
+numpy
