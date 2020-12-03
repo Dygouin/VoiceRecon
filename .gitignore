@@ -13,3 +13,4 @@ groupama/data/base_pno.*
 /raw_data/
 /raw_data/
 /notebooks/model*
+/notebooks
