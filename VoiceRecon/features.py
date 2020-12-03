@@ -55,10 +55,6 @@ def create_chromas(signal, sr):
     return np.array(chroma)
 
 def create_full_features(mel_spectogram, comprehensive_mfccs, chroma):
-    print(mel_spectogram.shape)
-    print(comprehensive_mfccs.shape)
-    print(chroma.shape)
     full_features = np.vstack((mel_spectogram, comprehensive_mfccs, chroma))
-    print(full_features.shape)
     full_features = full_features.reshape(1, 161, 176, 1)
     return full_features

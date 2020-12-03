@@ -37,9 +37,27 @@ def main():
             full_features = create_full_features(melspectogram, comprehensive_mfccs, chroma)
             prediction = pipeline.predict(full_features)
             del pipeline
+            mx_i = ind = np.argmax(prediction)
+            print(mx_i)
             df = pd.DataFrame(prediction)
             df.columns = ["Angry", "Calm", "Fearful", "Happy", "Neutral", "Sad"]
+            mx = df.idxmax(axis=0)
         st.write("The emotions are: ", df)
+
+        if mx_i == 0:
+            st.write("😠😠😠😠😠 RAAAWR it seems like you are angry.")
+        elif mx_i == 1:
+            st.write("😌😌😌😌😌 You are calm like a hindu cow.")
+        elif mx_i == 2:
+            st.write("😱😱😱😱😱 You are scared shitless.")
+        elif mx_i == 3:
+            st.write("😀😀😀😀😀 Keep being happy.")
+        elif mx_i == 4:
+            st.write("😐😐😐😐😐 Neutral as a swiss in WW2.")
+        elif mx_i == 5:
+            st.write("😭😭😭😭😭 Maybe you need to talk to someone...")
+
 
 if __name__ == "__main__":
     main()
+
