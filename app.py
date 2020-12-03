@@ -36,8 +36,10 @@ def main():
             chroma = create_chromas(to_predict, SR)
             full_features = create_full_features(melspectogram, comprehensive_mfccs, chroma)
             prediction = pipeline.predict(full_features)
+            del pipeline
             df = pd.DataFrame(prediction)
             df.columns = ["Angry", "Calm", "Fearful", "Happy", "Neutral", "Sad"]
         st.write("The emotions are: ", df)
+
 if __name__ == "__main__":
     main()
