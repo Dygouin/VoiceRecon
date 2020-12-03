@@ -5,6 +5,8 @@ import contextlib
 from tensorflow.keras import models
 from VoiceRecon.features import *
 
+pipeline = models.load_model("data/70_model")
+
 st.markdown("# VoiceRecon")
 st.markdown("**Predicting emotions**")
 
@@ -21,7 +23,7 @@ uploaded_file = st.file_uploader(label, type="wav", accept_multiple_files=False)
 
 def main():
     if uploaded_file is not None:
-        pipeline = models.load_model("data/70_model")
+        global pipeline
         prediction = None
         with open('user_upload.wav', mode='wb') as f:
           f.write(uploaded_file.getvalue())
