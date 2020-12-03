@@ -36,13 +36,13 @@ def main():
             chroma = create_chromas(to_predict, SR)
             full_features = create_full_features(melspectogram, comprehensive_mfccs, chroma)
             prediction = pipeline.predict(full_features)
-            del pipeline
             mx_i = ind = np.argmax(prediction)
             print(mx_i)
             df = pd.DataFrame(prediction)
             df.columns = ["Angry", "Calm", "Fearful", "Happy", "Neutral", "Sad"]
             mx = df.idxmax(axis=0)
         st.write("The emotions are: ", df)
+        del pipeline
 
         if mx_i == 0:
             st.write("😠😠😠😠😠 RAAAWR it seems like you are angry.")
