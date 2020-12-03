@@ -20,8 +20,8 @@ uploaded_file = st.file_uploader(label, type="wav", accept_multiple_files=False)
 
 
 def main():
-    pipeline = models.load_model("data/70_model")
     if uploaded_file is not None:
+        pipeline = models.load_model("data/70_model")
         prediction = None
         with open('user_upload.wav', mode='wb') as f:
           f.write(uploaded_file.getvalue())
